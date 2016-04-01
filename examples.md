@@ -42,5 +42,4 @@
 
 ##6. Creating, Accepting Connections, Writing Data, And Closing A Connection - Putting it all together + Creating A "Hello, world!" Page.
 
-- `$socket = SocketsServer::create("0.0.0.0", 80);``
-   Sockets::accept($socket);`
+- `$socket = SocketsServer::create("0.0.0.0", 80); $connection = SocketsServer::accept($socket); SocketsServer::write($connection, "HTTP/1.1 200 OK\r\nServer: PHP " . phpversion() . "\r\nContent-Type: text/html"); SocketsServer::write($connection, "<!DOCTYPE html><html><head><title>Hello, world!</title></head><body><center><h1>Hello, world!</h1></center></body></html>"); SocketsServer::connection_close($connection); SocketsServer::close($socket);`
