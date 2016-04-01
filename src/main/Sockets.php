@@ -326,6 +326,8 @@
 
   const SOCKETSSERVER_ACCEPT_ERROR = "Failed To Accept Connections To SocketsServer ";
 
+  const SOCKETSSERVER_WRITE_ERROR = "Failed To Write To SocketsServer ";
+
   const SOCKETSSERVER_CLOSE_ERROR = "Failed To Close SocketsServer ";
 
   const SOCKETSSERVER_CONNECTION_CLOSE_ERROR = "Failed To Close Connection To SocketsServer ";
@@ -335,6 +337,8 @@
   const SOCKETSSERVER_CREATE_INVALID_ARGUMENT = "Invalid Argument In SocketsServer::create() ";
 
   const SOCKETSSERVER_ACCEPT_INVALID_ARGUMENT = "Invalid Argument In SocketsServer::accept() ";
+
+  const SOCKETSSERVER_WRITE_INVALID_ARGUMENT = "Invalid Argument In SocketsServer::write() ";
 
   const SOCKETSSERVER_CLOSE_INVALID_ARGUMENT = "Invalid Argument In SocketsServer::close() ";
 
@@ -381,6 +385,29 @@
       {
 
         error(ERROR, SOCKETSSERRVER_ACCEPT_ERROR . $message);
+
+      }
+
+    }
+
+  }
+
+  class SocketsServerWriteError
+  {
+
+    public function __construct($message = null)
+    {
+
+      if($message == null || $message == "" || $message == " ")
+      {
+
+        exit();
+
+      }
+      else
+      {
+
+        error(ERROR, SOCKETSSERVER_WRITE_ERROR . $message);
 
       }
 
@@ -475,6 +502,29 @@
       {
 
         error(ERROR, SOCKETSSERVER_ACCEPT_INVALID_ARGUMENT . $message);
+
+      }
+
+    }
+
+  }
+
+  class SocketsServerWriteInvalidArgument
+  {
+
+    public function __construct($message = null)
+    {
+
+      if($message == null || $message == "" || $message == " ")
+      {
+
+        exit();
+
+      }
+      else
+      {
+
+        error(ERROR, SOCKETSSERVER_WRITE_INVALID_ARGUMENT . $message);
 
       }
 
@@ -608,6 +658,62 @@
         {
 
           return $acceptSocket;
+
+        }
+
+      }
+
+    }
+
+    // Create write Function
+
+    public static function write($connection = null, $data = null)
+    {
+
+      if(!(is_resource($connection)))
+      {
+
+        $bt = debug_backtrace();
+
+        $caller = array_shift($bt);
+
+        $SocketsServerWriteInvalidArgument = new SocketsServerWriteInvalidArgument("on line " . $caller["line"]);
+
+      }
+      else
+      {
+
+        if($data == null || $data == "" || $data == " ")
+        {
+
+          $bt = debug_backtrace();
+
+          $caller = array_shift($bt);
+
+          $SocketsServerWriteInvalidArgument = new SocketsServerWriteInvalidArgument("on line " . $caller["line"]);
+
+        }
+        else
+        {
+
+          $writeToConnection = @fwrite($connection, $data);
+
+          if(!($writeToConnection))
+          {
+
+            $bt = debug_backtrace();
+
+            $caller = array_shift($bt);
+
+            $SocketsServerWriteError = new SocketsServerWriteError("on line " . $caller["line"]);
+
+          }
+          else
+          {
+
+            return $writeToSocket;
+
+          }
 
         }
 
