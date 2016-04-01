@@ -36,6 +36,8 @@
 
 - `SocketsServer::connection_close($connection);`
 
-##5. Closing The Web Socket Server.
+###5. Closing The Web Socket Server.
 
 - `SocketsServer::close($socket);`
+
+###6. Creating, Accepting Connections, Writing Data, And Closing A Connection - Putting it all together.
