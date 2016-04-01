@@ -35,3 +35,7 @@
 ###4. Closing A Connection.
 
 - `SocketsServer::connection_close($connection);`
+
+##5. Closing The Web Socket Server.
+
+- `SocketsServer::close($socket);`
