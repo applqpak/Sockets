@@ -29,3 +29,5 @@
 - `SocketsServer::accept($socket);`
 
 ###3. Writing Data To A Connection.
+
+- `SocketsServer::write($connection, "HTTP/1.1 200 OK\r\nServer: PHP " . phpversion() . "\r\nContent-Type: text/html\r\n\r\n");`
