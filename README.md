@@ -4,7 +4,7 @@ Socket classes that DOESN'T require extra extensions.
 
 These classes do NOT require any extra extensions.
 
-#See [here](https://github.com/applqpak/Sockets/examples.md) for examples.
+#See [here](https://github.com/applqpak/Sockets/blob/master/examples.md) for examples.
 
 # What is supplied in this project:
 
