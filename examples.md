@@ -13,7 +13,7 @@
 
 - `Sockets::close($socket);`
 
-###4. Creating, Writing And Closing A Socket Connection - Putting It All Together.
+##4. Creating, Writing And Closing A Socket Connection - Putting It All Together.
 
 - `$socket = Sockets::connect("mysite.com", 80); Sockets::write($socket, "Hi"); Sockets::close($socket);`
 
@@ -40,4 +40,6 @@
 
 - `SocketsServer::close($socket);`
 
-###6. Creating, Accepting Connections, Writing Data, And Closing A Connection - Putting it all together.
+##6. Creating, Accepting Connections, Writing Data, And Closing A Connection - Putting it all together + Creating A "Hello, world!" Page.
+
+- `$socket = SocketsServer::create("0.0.0.0", 80);``Sockets::accept($socket);`
