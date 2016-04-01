@@ -42,4 +42,5 @@
 
 ##6. Creating, Accepting Connections, Writing Data, And Closing A Connection - Putting it all together + Creating A "Hello, world!" Page.
 
-- `$socket = SocketsServer::create("0.0.0.0", 80);``Sockets::accept($socket);`
+- `$socket = SocketsServer::create("0.0.0.0", 80);``
+   Sockets::accept($socket);`
