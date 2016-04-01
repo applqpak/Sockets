@@ -1,5 +1,5 @@
 # Sockets
-Socket classes that DOESN'T require extra extensions.
+The Essentials All-In-One Sockets Classes Built In PHP.
 
 
 These classes do NOT require any extra extensions.
