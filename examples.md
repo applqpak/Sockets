@@ -16,3 +16,11 @@
 #4. Creating, Writing And Closing A Socket Connection - Putting It All Together
 
 - `$socket = Sockets::connect("mysite.com", 80); Sockets::write($socket, "Hi"); Sockets::close($socket);`
+
+
+# SocketServer Examples
+
+#1. Creating A Web Socket Server
+
+- `SocketsServer::create("0.0.0.0", 80); <- This creates a Socket Server running on localhost.
+
