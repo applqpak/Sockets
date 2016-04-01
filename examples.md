@@ -5,7 +5,14 @@
 
 - `Sockets::connect("google.com", 80);`
 
-#2. Creating A Socket Connection And Writing Data
+#2. Writing Data To A Socket Connection
 
-- `$socket = Sockets::connect("mysite.com", 80);
-Sockets::write($socket, "Hi");`
+- `Sockets::write($socket, "Hi");`
+
+#3. Closing A Socket Connection
+
+- `Sockets::close($socket);`
+
+#4. Creating, Writing And Closing A Socket Connection - Putting It All Together
+
+- `$socket = Sockets::connect("mysite.com", 80); Sockets::write($socket, "Hi"); Sockets::close($socket);`
