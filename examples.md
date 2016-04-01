@@ -3,4 +3,6 @@
 
 #1. Creating A Socket Connection To google.com
 
-- Sockets::connect("Google.com", 80);
+- ```php
+    Sockets::connect("google.com", 80);
+```
